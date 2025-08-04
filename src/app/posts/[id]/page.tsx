@@ -67,7 +67,7 @@ export async function generateMetadata({params}: { params: Promise<{ id: string 
             publishedTime: post.date,
             images: [
                 {
-                    url: "https://www.wrc.noaa.gov/wrso/cartoons/SecRain.gif",
+                    url: post.imgSrc,
                     width: 1200,
                     height: 630,
                     alt: post.title,
@@ -78,7 +78,7 @@ export async function generateMetadata({params}: { params: Promise<{ id: string 
             card: 'summary_large_image',
             title: post.title,
             description: post.description,
-            images: ["https://www.wrc.noaa.gov/wrso/cartoons/SecRain.gif"]
+            images: [post.imgSrc]
         },
 
         alternates: {
