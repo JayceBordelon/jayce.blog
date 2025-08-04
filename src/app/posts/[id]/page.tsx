@@ -5,18 +5,16 @@ import {Badge} from "@/components/ui/badge";
 import {Button} from "@/components/ui/button";
 import Link from "next/link";
 
-
 interface PageProps {
-    params: {
+    params: Promise<{
         id: string;
-    };
+    }>;
 }
 
 export default async function PostPage({params}: PageProps) {
     const {id} = await params;
     const postMetaData = getPostMetaDataById(id);
     const content = await getPostContentById(id);
-
 
     if (!postMetaData || !content) {
         notFound();
@@ -55,8 +53,7 @@ export default async function PostPage({params}: PageProps) {
     );
 }
 
-
-export async function generateMetadata({params}: { params: { id: string } }): Promise<Metadata> {
+export async function generateMetadata({params}: { params: Promise<{ id: string }> }): Promise<Metadata> {
     const {id} = await params
     const post = await getPostMetaDataById(id);
     if (!post) return {title: "Not Found"}
