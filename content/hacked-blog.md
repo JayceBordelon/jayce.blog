@@ -43,7 +43,7 @@ json file to a cloud storage. The structure did not change, and I was still pars
 before.
 
 To update this now, I had an admin login! Because users could create accounts, I allowed myself to edit the documents if
-I was logged in with a specific email. Because this was one of my firs exposures to backend development, I assumed that
+I was logged in with a specific email. Because this was one of my first exposure to backend development, I assumed that
 nothing on the server would ever be found out or seen. Of course, I was wrong. Having a check like the following ended
 up being a kinda bad idea...
 
